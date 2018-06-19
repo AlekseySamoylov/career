@@ -18,9 +18,11 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.alekseysamoylov.career'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 
@@ -41,4 +43,13 @@ dependencies {
     compileOnly('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
+
+    testCompile(
+            'junit:junit:4.12',
+            'org.codehaus.groovy:groovy-all:2.4.4',
+            'org.spockframework:spock-core:1.1-groovy-2.4'
+    )
+    testRuntime(
+            'com.athaydes:spock-reports:1.2.7'
+    )
 }
